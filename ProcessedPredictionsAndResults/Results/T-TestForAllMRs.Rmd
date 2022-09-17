@@ -1,0 +1,118 @@
+---
+title: "T-Test"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+<!-- https://www.statisticssolutions.com/manova-analysis-paired-sample-t-test/ -->
+<!-- We are interested be check the consistency of a DNN model before and after data transformation, and analyze the differences using a paired sample t-test. -->
+
+#Introduction#
+
+```{r}
+#install.packages("readxl")
+#install.packages("tidyverse")
+#install.packages("dplyr")
+```
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(dplyr)
+library("readxl")
+#load data
+
+#mutantDataSet <- read_excel("C:\\Users\\faqeerrehman\\MSU\\OneDrive - Montana State #University\\Research\\Clem\\ImageClassification\\ProcessedPredictionsAndResults\\TestStatistic\\Mutant1\\MRs\\combinedDataset_Instance5.xls")
+
+#mutantDataSet <- read_excel("C:\\Users\\faqeerrehman\\MSU\\OneDrive - Montana State #University\\Research\\Clem\\ImageClassification\\ProcessedPredictionsAndResults\\TestStatistic\\Mutant1\\MRs\\combinedDataset_Instance11.xls")
+
+#mutantDataSet <- read_excel("C:\\Users\\faqeerrehman\\MSU\\OneDrive - Montana State #University\\Research\\Clem\\ImageClassification\\ProcessedPredictionsAndResults\\TestStatistic\\Mutant1\\MRs\\combinedDataset_Instance13.xls")
+
+#mutantDataSet <- read_excel("C:\\Users\\faqeerrehman\\MSU\\OneDrive - Montana State #University\\Research\\Clem\\ImageClassification\\ProcessedPredictionsAndResults\\TestStatistic\\Mutant1\\MRs\\combinedDataset_Instance18.xls")
+
+#mutantDataSet <- read_excel("C:\\Users\\faqeerrehman\\MSU\\OneDrive - Montana State #University\\Research\\Clem\\ImageClassification\\ProcessedPredictionsAndResults\\TestStatistic\\Mutant1\\MRs\\combinedDataset_Instance39.xls")
+
+#mutantDataSet <- read_excel("C:\\Users\\faqeerrehman\\MSU\\OneDrive - Montana State #University\\Research\\Clem\\ImageClassification\\ProcessedPredictionsAndResults\\TestStatistic\\Mutant1\\MRs\\combinedDataset_Instance42.xls")
+
+head(mutantDataSet)
+```
+
+```{r}
+mutantDataSet <- read_excel("C:\\Users\\faqeerrehman\\MSU\\OneDrive - Montana State University\\Research\\Clem\\ImageClassification\\ProcessedPredictionsAndResults\\TestStatistic\\Mutant7\\MRs\\combinedDataset_Instance42.xls")
+#head(mutantDataSet)
+
+print("Blur")
+t.test(mutantDataSet$Source,mutantDataSet$MRBlur,mu=0,conf.level=0.95,alternative="two.sided")
+
+
+print("Flip")
+t.test(mutantDataSet$Source,mutantDataSet$MRFlip,mu=0,conf.level=0.95,alternative="two.sided")
+
+print("Mirror")
+t.test(mutantDataSet$Source,mutantDataSet$MRMirror,mu=0,conf.level=0.95,alternative="two.sided")
+
+print("Rectangle")
+t.test(mutantDataSet$Source,mutantDataSet$MRRectangle,mu=0,conf.level=0.95,alternative="two.sided")
+
+print("Rotation")
+t.test(mutantDataSet$Source,mutantDataSet$MRRotation,mu=0,conf.level=0.95,alternative="two.sided")
+
+print("Scattered Dots")
+t.test(mutantDataSet$Source,mutantDataSet$MRScatteredDots,mu=0,conf.level=0.95,alternative="two.sided")
+
+print("Sharp")
+t.test(mutantDataSet$Source,mutantDataSet$MRSharp,mu=0,conf.level=0.95,alternative="two.sided")
+
+
+
+```
+```{r}
+diffBwSrcFlw = mutantDataSet$Source - mutantDataSet$MRFlip
+par(mfrow=c(1,2))
+qqnorm(diffBwSrcFlw)
+qqline(diffBwSrcFlw,col="red",lwd=2)
+```
+
+# #########################Mutant1###############################
+
+
+```{r}
+t.test(mutantDataSet$Source,mutantDataSet$MRFlip,mu=0,conf.level=0.95,alternative="two.sided")
+```
+
+```{r, eval = FALSE}
+par(mfrow=c(1,2)) 
+hist(diffBwSrcFlw,
+    main="Source Executions",
+    xlab= "Probabilities",breaks=10)
+```
+
+```{r}
+par(mfrow=c(1,2))
+qqnorm(diffBwSrcFlw)
+qqline(diffBwSrcFlw,col="red",lwd=2)
+```
+
+```{r, eval = FALSE}
+#BoxPlot
+boxplot(diffBwSrcFlw,
+        main = "Scores produced by source and followup executions",
+        names = c("Difference"),
+        ylab= "Scores",
+        col=c(3,4))
+#boxplot.stats(diffBwSrcFlw1)$out
+```
+
+```{r}
+t.test(diffBwSrcFlw,mu=0,conf.level=0.95,alternative="two.sided")
+#t.test(cancerPredictionDS$Source,cancerPredictionDS$MR0,mu=0,conf.level=0.95,alternative="two.sided",paired = T)
+
+
+#diffBwSrcFlw = mutantDataSet$Source - mutantDataSet$MRSharp
+#t.test(diffBwSrcFlw,mu=0,conf.level=0.95,alternative="two.sided") 
+```
+

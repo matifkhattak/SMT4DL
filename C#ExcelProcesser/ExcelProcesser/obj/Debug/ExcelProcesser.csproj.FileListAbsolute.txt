@@ -1,0 +1,60 @@
+C:\Users\faqeerrehman\MSU\Research\CancerPrediction\ScientificSWTesting\Pilot1\P1B2Tests\Results\PerClassOutputs\20Epochs\ExcelProcesser\ExcelProcesser\bin\Debug\ExcelProcesser.exe.config
+C:\Users\faqeerrehman\MSU\Research\CancerPrediction\ScientificSWTesting\Pilot1\P1B2Tests\Results\PerClassOutputs\20Epochs\ExcelProcesser\ExcelProcesser\bin\Debug\ExcelProcesser.exe
+C:\Users\faqeerrehman\MSU\Research\CancerPrediction\ScientificSWTesting\Pilot1\P1B2Tests\Results\PerClassOutputs\20Epochs\ExcelProcesser\ExcelProcesser\bin\Debug\ExcelProcesser.pdb
+C:\Users\faqeerrehman\MSU\Research\CancerPrediction\ScientificSWTesting\Pilot1\P1B2Tests\Results\PerClassOutputs\20Epochs\ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.Form1.resources
+C:\Users\faqeerrehman\MSU\Research\CancerPrediction\ScientificSWTesting\Pilot1\P1B2Tests\Results\PerClassOutputs\20Epochs\ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.Properties.Resources.resources
+C:\Users\faqeerrehman\MSU\Research\CancerPrediction\ScientificSWTesting\Pilot1\P1B2Tests\Results\PerClassOutputs\20Epochs\ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.csproj.GenerateResource.Cache
+C:\Users\faqeerrehman\MSU\Research\CancerPrediction\ScientificSWTesting\Pilot1\P1B2Tests\Results\PerClassOutputs\20Epochs\ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.exe
+C:\Users\faqeerrehman\MSU\Research\CancerPrediction\ScientificSWTesting\Pilot1\P1B2Tests\Results\PerClassOutputs\20Epochs\ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.pdb
+C:\Users\faqeerrehman\MSU\Research\CancerPrediction\ScientificSWTesting\Pilot1\P1B2Tests\Results\PerClassOutputs\20Epochs\ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.csproj.ResolveComReference.cache
+C:\Users\faqeerrehman\MSU\Research\CancerPrediction\ScientificSWTesting\Pilot1\P1B2Tests\Results\PerClassOutputs\20Epochs\ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.csprojResolveAssemblyReference.cache
+C:\Users\faqeerrehman\MSU\Research\CancerPrediction\ScientificSWTesting\Pilot1\P1B2Tests\Results\PerClassOutputs\20Epochs\ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.CyberSecurityDataPreProcessing.resources
+C:\Users\faqeerrehman\MSU\Research\CancerPrediction\ScientificSWTesting\Pilot1\P1B2Tests\Results\PerClassOutputs\20Epochs\ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.DeviationCalculator.resources
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\ExcelProcesser\ExcelProcesser\bin\Debug\ExcelProcesser.exe.config
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.csproj.ResolveComReference.cache
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.exe
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.pdb
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\ExcelProcesser\ExcelProcesser\bin\Debug\ExcelProcesser.exe
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\ExcelProcesser\ExcelProcesser\bin\Debug\ExcelProcesser.pdb
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.csprojResolveAssemblyReference.cache
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.CyberSecurityDataPreProcessing.resources
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.DeviationCalculator.resources
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.ProcessExcelFiles.resources
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.Properties.Resources.resources
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.csproj.GenerateResource.Cache
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\bin\Debug\ExcelProcesser.exe.config
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.csproj.ResolveComReference.cache
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.exe
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.pdb
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.csprojResolveAssemblyReference.cache
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.CyberSecurityDataPreProcessing.resources
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.DeviationCalculator.resources
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.ProcessExcelFiles.resources
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.Properties.Resources.resources
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.csproj.GenerateResource.Cache
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\bin\Debug\ExcelProcesser.exe
+C:\Users\faqeerrehman\MSU\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\bin\Debug\ExcelProcesser.pdb
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\bin\Debug\ExcelProcesser.exe.config
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.csproj.ResolveComReference.cache
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.exe
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.pdb
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\bin\Debug\ExcelProcesser.exe
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\bin\Debug\ExcelProcesser.pdb
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.csprojResolveAssemblyReference.cache
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.CyberSecurityDataPreProcessing.resources
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.DeviationCalculator.resources
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.ProcessExcelFiles.resources
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.Properties.Resources.resources
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\Candle_SoftmaxProbabilities\P1B2Tests\Results\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.csproj.GenerateResource.Cache
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\C#ExcelProcesser\ExcelProcesser\bin\Debug\ExcelProcesser.exe.config
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.csproj.ResolveComReference.cache
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.exe
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.pdb
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\C#ExcelProcesser\ExcelProcesser\bin\Debug\ExcelProcesser.exe
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\C#ExcelProcesser\ExcelProcesser\bin\Debug\ExcelProcesser.pdb
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.csprojResolveAssemblyReference.cache
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.CyberSecurityDataPreProcessing.resources
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.DeviationCalculator.resources
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.ProcessExcelFiles.resources
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.Properties.Resources.resources
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\C#ExcelProcesser\ExcelProcesser\obj\Debug\ExcelProcesser.csproj.GenerateResource.Cache

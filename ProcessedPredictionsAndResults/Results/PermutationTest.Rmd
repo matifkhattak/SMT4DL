@@ -1,0 +1,234 @@
+---
+title: "PermutationTest"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+```{r}
+install.packages("twot")
+```
+
+```{r}
+library(coin)
+library(twot)
+```
+
+
+```{r}
+install.packages("readxl")
+```
+```{r}
+library("readxl")
+```
+
+```{r}
+mutantDataSet <- read_excel("C:\\Users\\faqeerrehman\\MSU\\OneDrive - Montana State University\\Research\\Clem\\ImageClassification\\ProcessedPredictionsAndResults\\TestStatistic\\Mutant7\\MRs\\combinedDataset_Instance11.xls")
+head(mutantDataSet)
+```
+
+```{r}
+
+mutantDataSet <- read_excel("C:\\Users\\faqeerrehman\\MSU\\OneDrive - Montana State University\\Research\\Clem\\ImageClassification\\ProcessedPredictionsAndResults\\TestStatistic\\Mutant7\\MRs\\combinedDataset_Instance42.xls")
+
+#https://medium.com/analytics-vidhya/permutation-test-as-an-alternative-to-two-sample-t-test-using-r-9f5da921bc95
+Source <- mutantDataSet$Source
+Followup <- mutantDataSet$MRBlur
+if((mean(Source) - mean(Followup))>=0) {
+  diff <- mean(Source) - mean(Followup)
+} else {
+  diff <- mean(Followup) - mean(Source)
+}
+#diff
+combined_data <- c(Source, Followup) # combines the data
+set.seed(123) # set seed for reproducibility
+null_dist <- c() # declaring a vector to contain the null distributions
+ 
+# performs randomization at least 1000
+for (i in 1:1000) {
+  shuffled_data <- sample(combined_data)  # randomly shuffles the data
+  sourceMR <- shuffled_data[1:30] # assigns the first 30 points to 2000
+  FollowupMR <- shuffled_data[31:60]  # assigns the last seven points to 2019
+  null_dist[i] <- mean(sourceMR) - mean(FollowupMR)
+}
+
+p_value <- (sum(null_dist >= diff) + sum(null_dist <= -diff))/length(null_dist)
+
+print("===Blur====")
+print(p_value)
+######################################################################################
+
+Source <- mutantDataSet$Source
+Followup <- mutantDataSet$MRFlip
+if((mean(Source) - mean(Followup))>=0) {
+  diff <- mean(Source) - mean(Followup)
+} else {
+  diff <- mean(Followup) - mean(Source)
+}
+#diff
+combined_data <- c(Source, Followup) # combines the data
+set.seed(123) # set seed for reproducibility
+null_dist <- c() # declaring a vector to contain the null distributions
+ 
+# performs randomization at least 1000
+for (i in 1:1000) {
+  shuffled_data <- sample(combined_data)  # randomly shuffles the data
+  sourceMR <- shuffled_data[1:30] # assigns the first 30 points to 2000
+  FollowupMR <- shuffled_data[31:60]  # assigns the last seven points to 2019
+  null_dist[i] <- mean(sourceMR) - mean(FollowupMR)
+}
+
+p_value <- (sum(null_dist >= diff) + sum(null_dist <= -diff))/length(null_dist)
+
+print("===Flip====")
+print(p_value)
+######################################################################################
+
+Source <- mutantDataSet$Source
+Followup <- mutantDataSet$MRMirror
+if((mean(Source) - mean(Followup))>=0) {
+  diff <- mean(Source) - mean(Followup)
+} else {
+  diff <- mean(Followup) - mean(Source)
+}
+#diff
+combined_data <- c(Source, Followup) # combines the data
+set.seed(123) # set seed for reproducibility
+null_dist <- c() # declaring a vector to contain the null distributions
+ 
+# performs randomization at least 1000
+for (i in 1:1000) {
+  shuffled_data <- sample(combined_data)  # randomly shuffles the data
+  sourceMR <- shuffled_data[1:30] # assigns the first 30 points to 2000
+  FollowupMR <- shuffled_data[31:60]  # assigns the last seven points to 2019
+  null_dist[i] <- mean(sourceMR) - mean(FollowupMR)
+}
+
+p_value <- (sum(null_dist >= diff) + sum(null_dist <= -diff))/length(null_dist)
+
+print("===Mirror====")
+print(p_value)
+######################################################################################
+
+Source <- mutantDataSet$Source
+Followup <- mutantDataSet$MRRectangle
+if((mean(Source) - mean(Followup))>=0) {
+  diff <- mean(Source) - mean(Followup)
+} else {
+  diff <- mean(Followup) - mean(Source)
+}
+#diff
+combined_data <- c(Source, Followup) # combines the data
+set.seed(123) # set seed for reproducibility
+null_dist <- c() # declaring a vector to contain the null distributions
+ 
+# performs randomization at least 1000
+for (i in 1:1000) {
+  shuffled_data <- sample(combined_data)  # randomly shuffles the data
+  sourceMR <- shuffled_data[1:30] # assigns the first 30 points to 2000
+  FollowupMR <- shuffled_data[31:60]  # assigns the last seven points to 2019
+  null_dist[i] <- mean(sourceMR) - mean(FollowupMR)
+}
+
+p_value <- (sum(null_dist >= diff) + sum(null_dist <= -diff))/length(null_dist)
+
+print("===Rectangle====")
+print(p_value)
+######################################################################################
+
+Source <- mutantDataSet$Source
+Followup <- mutantDataSet$MRRotation
+if((mean(Source) - mean(Followup))>=0) {
+  diff <- mean(Source) - mean(Followup)
+} else {
+  diff <- mean(Followup) - mean(Source)
+}
+#diff
+combined_data <- c(Source, Followup) # combines the data
+set.seed(123) # set seed for reproducibility
+null_dist <- c() # declaring a vector to contain the null distributions
+ 
+# performs randomization at least 1000
+for (i in 1:1000) {
+  shuffled_data <- sample(combined_data)  # randomly shuffles the data
+  sourceMR <- shuffled_data[1:30] # assigns the first 30 points to 2000
+  FollowupMR <- shuffled_data[31:60]  # assigns the last seven points to 2019
+  null_dist[i] <- mean(sourceMR) - mean(FollowupMR)
+}
+
+p_value <- (sum(null_dist >= diff) + sum(null_dist <= -diff))/length(null_dist)
+
+print("===Rotation====")
+print(p_value)
+######################################################################################
+
+Source <- mutantDataSet$Source
+Followup <- mutantDataSet$MRScatteredDots
+if((mean(Source) - mean(Followup))>=0) {
+  diff <- mean(Source) - mean(Followup)
+} else {
+  diff <- mean(Followup) - mean(Source)
+}
+#diff
+combined_data <- c(Source, Followup) # combines the data
+set.seed(123) # set seed for reproducibility
+null_dist <- c() # declaring a vector to contain the null distributions
+ 
+# performs randomization at least 1000
+for (i in 1:1000) {
+  shuffled_data <- sample(combined_data)  # randomly shuffles the data
+  sourceMR <- shuffled_data[1:30] # assigns the first 30 points to 2000
+  FollowupMR <- shuffled_data[31:60]  # assigns the last seven points to 2019
+  null_dist[i] <- mean(sourceMR) - mean(FollowupMR)
+}
+
+p_value <- (sum(null_dist >= diff) + sum(null_dist <= -diff))/length(null_dist)
+
+print("===ScatteredDots====")
+print(p_value)
+######################################################################################
+
+Source <- mutantDataSet$Source
+Followup <- mutantDataSet$MRSharp
+if((mean(Source) - mean(Followup))>=0) {
+  diff <- mean(Source) - mean(Followup)
+} else {
+  diff <- mean(Followup) - mean(Source)
+}
+#diff
+combined_data <- c(Source, Followup) # combines the data
+set.seed(123) # set seed for reproducibility
+null_dist <- c() # declaring a vector to contain the null distributions
+ 
+# performs randomization at least 1000
+for (i in 1:1000) {
+  shuffled_data <- sample(combined_data)  # randomly shuffles the data
+  sourceMR <- shuffled_data[1:30] # assigns the first 30 points to 2000
+  FollowupMR <- shuffled_data[31:60]  # assigns the last seven points to 2019
+  null_dist[i] <- mean(sourceMR) - mean(FollowupMR)
+}
+
+p_value <- (sum(null_dist >= diff) + sum(null_dist <= -diff))/length(null_dist)
+
+print("===Sharp====")
+print(p_value)
+
+
+
+
+
+
+
+
+
+
+#print("====T-test====")
+#t.test(Source, Followup,mu=0,conf.level=0.95,alternative="two.sided")
+#t.test(Followup,Source,mu=0,conf.level=0.95,alternative="two.sided", var.equal = TRUE)
+```
+
+
+

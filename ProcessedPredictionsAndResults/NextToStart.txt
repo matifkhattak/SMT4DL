@@ -1,0 +1,9 @@
+====Done Till====
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\PneumoniaDetection\Results\Mutants\Mutant8\Followup\Mutant8_Flip.xls
+
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\ProcessedResults\MaxVoting\Mutant8\MRs\MRFlip\Instances
+
+===Next to start===
+
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\PneumoniaDetection\Results\Mutants\Mutant3\Followup\Mutant3_Mirror.xls
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\ProcessedResults\MaxVoting\Mutant3\MRs\MRMirror\Instances

@@ -1,0 +1,52 @@
+---
+title: "ChiSquareTest"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+install.packages("readxl")
+```
+
+
+```{r}
+#install.packages("dplyr")
+#install.packages("tidyr")
+#install.packages("knitr")
+```
+
+```{r}
+library(dplyr)
+library(tidyr)
+
+```
+
+```{r}
+library(knitr)
+#http://analyticswithr.com/chisquare.html
+A <- matrix(c(28,2),ncol=2,byrow=TRUE)
+colnames(A) <- c("A","B")
+A <- as.table(A)
+
+B <- matrix(c(25,	5),ncol=2,byrow=TRUE)
+colnames(B) <- c("A","B")
+B <- as.table(B)
+AB<- rbind(A,B)
+#kable(AB)
+#AB
+#kable(AB)
+chiTest <- chisq.test(AB)
+chiTest
+fischerTest <- fisher.test(AB, workspace = 2e8)
+fischerTest
+#chiTest$observed
+#chiTest$expected
+
+```
+
+
