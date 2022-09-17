@@ -1,0 +1,26 @@
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\PneumoniaDetection\venv\Lib\site-packages\keras\engine\data_adapter.py
+
+peek = self._standardize_batch(peek) #Orgional, uncommented
+
+#peek = self._standardize_batch(peek) #Faqeer: Mutant (commented this line of code): Statement removal mutant
+
+
+
+=======================
+Accuracy is more than 80% for both source and follow-up executions
+
+As an example:
+
+CONFUSION MATRIX ------------------
+[[161  73]
+ [  3 387]]
+
+
+TEST METRICS ----------------------
+Accuracy: 87.82051282051282%
+Precision: 84.1304347826087%
+Recall: 99.23076923076923%
+F1-score: 91.05882352941178
+
+TRAIN METRIC ----------------------
+Train acc: 96.4

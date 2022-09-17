@@ -1,0 +1,16 @@
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\PneumoniaDetection\venv\Lib\site-packages\keras\optimizer_v2\optimizer_v2.py
+
+
+apply_state = self._prepare(var_list)
+      if experimental_aggregate_gradients:
+        grads_and_vars = self._transform_unaggregated_gradients(grads_and_vars)
+        grads_and_vars = self._aggregate_gradients(grads_and_vars) # Origional
+      grads_and_vars = self._transform_gradients(grads_and_vars)
+
+
+
+apply_state = self._prepare(var_list)
+      if experimental_aggregate_gradients:
+        grads_and_vars = self._transform_unaggregated_gradients(grads_and_vars)
+        #grads_and_vars = self._aggregate_gradients(grads_and_vars) # Faqeer: mutant added by removing this line of code. Statement removal mutant
+      grads_and_vars = self._transform_gradients(grads_and_vars)

@@ -1,0 +1,39 @@
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\PneumoniaDetection\Medical_Image_Classification.py
+        
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\PneumoniaDetection\Medical_Image_Classification_Followup.py
+
+for cond in ['/NORMAL/', '/PNEUMONIA/']:
+            for img in (os.listdir(path + 'test' + cond)):
+                img = plt.imread(path + 'test' + cond + img)
+                img = cv2.resize(img, (img_dims, img_dims))
+                img = np.dstack([img, img, img])
+                img = img.astype('float32') / 255                     # origional
+                if cond == '/NORMAL/':
+                    label = 0
+                elif cond == '/PNEUMONIA/':
+                    label = 1
+                test_data.append(img)
+                test_labels.append(label)
+
+
+for cond in ['/NORMAL/', '/PNEUMONIA/']:
+            for img in (os.listdir(path + 'test' + cond)):
+                img = plt.imread(path + 'test' + cond + img)
+                img = cv2.resize(img, (img_dims, img_dims))
+                img = np.dstack([img, img, img])
+                img = img.astype('float32') / 155                       #mutant added
+                if cond == '/NORMAL/':
+                    label = 0
+                elif cond == '/PNEUMONIA/':
+                    label = 1
+                test_data.append(img)
+                test_labels.append(label)
+
+
+
+=====================================================
+CONFUSION MATRIX ------------------
+[[209  25]
+ [ 38 352]]
+
+Try to check/test for class 1 instances.

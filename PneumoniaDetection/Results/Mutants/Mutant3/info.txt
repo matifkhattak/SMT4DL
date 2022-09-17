@@ -1,0 +1,64 @@
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\PneumoniaDetection\venv\Lib\site-packages\keras\optimizer_v2\utils.py
+
+# it will cause in calculation of wrong gradients reduction.
+  if filtered_grads_and_vars:
+    if tf.__internal__.distribute.strategy_supports_no_merge_call():
+      grads = [pair[0] for pair in filtered_grads_and_vars]                          #origional code
+      reduced = tf.distribute.get_replica_context().all_reduce(
+          tf.distribute.ReduceOp.SUM, grads)
+    else:
+      # TODO(b/183257003): Remove this branch
+      reduced = tf.distribute.get_replica_context().merge_call(
+          _all_reduce_sum_fn, args=(filtered_grads_and_vars,))
+
+
+
+  if filtered_grads_and_vars:
+    if tf.__internal__.distribute.strategy_supports_no_merge_call():
+      grads = [pair[1] for pair in filtered_grads_and_vars]                          # Mutant added here
+      reduced = tf.distribute.get_replica_context().all_reduce(
+          tf.distribute.ReduceOp.SUM, grads)
+    else:
+      # TODO(b/183257003): Remove this branch
+      reduced = tf.distribute.get_replica_context().merge_call(
+          _all_reduce_sum_fn, args=(filtered_grads_and_vars,))
+
+
+-------
+instead of getting the gradients (for variables) using pair[0], we are extracting the variables values using pair[1], due to which the loss: 0.6931 remains constant for all epocs
+
+Epoch 1/10
+163/163 [==============================] - 206s 1s/step - loss: 0.6931 - accuracy: 0.3384 - val_loss: 0.6931 - val_accuracy: 0.3317 - lr: 0.0010
+Epoch 2/10
+163/163 [==============================] - 78s 480ms/step - loss: 0.6931 - accuracy: 0.2571 - val_loss: 0.6931 - val_accuracy: 0.3221 - lr: 0.0010
+Epoch 3/10
+163/163 [==============================] - ETA: 0s - loss: 0.6931 - accuracy: 0.2571
+Epoch 3: ReduceLROnPlateau reducing learning rate to 0.0003000000142492354.
+163/163 [==============================] - 81s 500ms/step - loss: 0.6931 - accuracy: 0.2571 - val_loss: 0.6931 - val_accuracy: 0.3173 - lr: 0.0010
+Epoch 4/10
+163/163 [==============================] - 80s 488ms/step - loss: 0.6931 - accuracy: 0.2571 - val_loss: 0.6931 - val_accuracy: 0.3221 - lr: 3.0000e-04
+Epoch 5/10
+163/163 [==============================] - ETA: 0s - loss: 0.6931 - accuracy: 0.2571
+Epoch 5: ReduceLROnPlateau reducing learning rate to 9.000000427477062e-05.
+163/163 [==============================] - 83s 507ms/step - loss: 0.6931 - accuracy: 0.2571 - val_loss: 0.6931 - val_accuracy: 0.3293 - lr: 3.0000e-04
+Epoch 6/10
+163/163 [==============================] - 81s 497ms/step - loss: 0.6931 - accuracy: 0.2571 - val_loss: 0.6931 - val_accuracy: 0.3293 - lr: 9.0000e-05
+Epoch 7/10
+163/163 [==============================] - ETA: 0s - loss: 0.6931 - accuracy: 0.2571
+Epoch 7: ReduceLROnPlateau reducing learning rate to 2.700000040931627e-05.
+163/163 [==============================] - 81s 496ms/step - loss: 0.6931 - accuracy: 0.2571 - val_loss: 0.6931 - val_accuracy: 0.3197 - lr: 9.0000e-05
+Epoch 8/10
+163/163 [==============================] - 78s 477ms/step - loss: 0.6931 - accuracy: 0.2571 - val_loss: 0.6931 - val_accuracy: 0.3125 - lr: 2.7000e-05
+Epoch 9/10
+163/163 [==============================] - ETA: 0s - loss: 0.6931 - accuracy: 0.2571
+Epoch 9: ReduceLROnPlateau reducing learning rate to 8.100000013655517e-06.
+163/163 [==============================] - 79s 487ms/step - loss: 0.6931 - accuracy: 0.2571 - val_loss: 0.6931 - val_accuracy: 0.3245 - lr: 2.7000e-05
+Epoch 10/10
+163/163 [==============================] - 79s 482ms/step - loss: 0.6931 - accuracy: 0.2571 - val_loss: 0.6931 - val_accuracy: 0.3125 - lr: 8.1000e-06
+C:/Users/faqeerrehman/MSU/OneDrive - Montana State University/Research/Clem/ImageClassification/PneumoniaDetection/Medical_Image_Classification_Followup.py:219: RuntimeWarning: invalid value encountered in longlong_scalars
+CONFUSION MATRIX ------------------
+  precision = tp / (tp + fp) * 100
+[[234   0]
+ [390   0]]
+
+We have seen (when the model was trained for multiple iterations) that precision is nan, and saw that all the test instances are classified as class 1.

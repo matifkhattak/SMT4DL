@@ -1,0 +1,1 @@
+the validation dataset was very small, we copied the data (excluding the top 100) for both classes (Normal, and Peeumonia) from test to validation dataset.
