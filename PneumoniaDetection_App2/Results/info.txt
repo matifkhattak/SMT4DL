@@ -1,0 +1,7 @@
+1 - Statement replacement by changing the data
+2 - Statement removal/deletion
+3 - Constant replacement
+4 - Statement replacement by changing the data
+5 - Return statement replacement
+6 - Statement replacement by changing the data 
+7 - Statement removal mutant

@@ -1,0 +1,54 @@
+======Mutants that are either equivalent (or code unreacable) OR generating an error=====
+======1=================
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\PneumoniaDetection\venv\Lib\site-packages\tensorflow\python\ops\gen_array_ops.py
+
+_execute.record_gradient(
+        "BroadcastGradientArgs", _inputs_flat, _attrs, _result)
+  _result = _BroadcastGradientArgsOutput._make(_result)              #Origional
+  return _result
+
+_execute.record_gradient(
+        "BroadcastGradientArgs", _inputs_flat, _attrs, _result)
+  ##_result = _BroadcastGradientArgsOutput._make(_result)              #mutant
+  return _result
+
+
+===============2==============
+_result = _outputs[:]                                                 #origional
+  if _execute.must_record_gradient():
+    _attrs = ("T", _op._get_attr_type("T"))
+    _inputs_flat = _op.inputs
+    _execute.record_gradient(
+        "BroadcastGradientArgs", _inputs_flat, _attrs, _result)
+  _result = _BroadcastGradientArgsOutput._make(_result)
+  return _result
+
+
+_result = _outputs[9:]                                                  #mutant
+  if _execute.must_record_gradient():
+    _attrs = ("T", _op._get_attr_type("T"))
+    _inputs_flat = _op.inputs
+    _execute.record_gradient(
+        "BroadcastGradientArgs", _inputs_flat, _attrs, _result)
+  _result = _BroadcastGradientArgsOutput._make(_result)
+  return _result
+
+=========3===============
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\PneumoniaDetection\venv\Lib\site-packages\keras\optimizer_v2\optimizer_v2.py
+
+  def _get_gradients(self, tape, loss, var_list, grad_loss=None):
+    """Called in `minimize` to compute gradients from loss."""
+    grads = tape.gradient(loss, var_list, grad_loss)                   #origional code
+
+    return list(zip(grads, var_list))
+
+
+  def _get_gradients(self, tape, loss, var_list, grad_loss=None):
+    """Called in `minimize` to compute gradients from loss."""
+    grads = tape.gradient(loss, var_list, loss)                        #Faqeer: mutant added
+
+    return list(zip(grads, var_list))
+
+Yes, the grad_loss parameter is not used in the subsequent functions
+
+===========4=================

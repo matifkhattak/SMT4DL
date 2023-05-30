@@ -1,0 +1,28 @@
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\PneumoniaDetection\venv\Lib\site-packages\keras_preprocessing\image\iterator.py
+
+#index_array = self.index_array[self.batch_size * idx:
+                              self.batch_size * (idx + 1)] #Origional
+
+
+index_array = self.index_array[self.batch_size * idx + 27:
+                                       self.batch_size * (idx + 1)]  # Faqeer: Mutant
+
+=================================================
+--Source execution----
+Start time = 2022-06-08 13:30:24.169057
+End time = 2022-06-08 15:25:31.723610
+
+=======================
+Accuracy is more than 80% for both source and follow-up executions
+
+As an example:
+
+CONFUSION MATRIX ------------------
+[[209  25]
+ [ 63 327]]
+
+TEST METRICS ----------------------
+Accuracy: 85.8974358974359%
+Precision: 92.89772727272727%
+Recall: 83.84615384615385%
+F1-score: 88.14016172506739

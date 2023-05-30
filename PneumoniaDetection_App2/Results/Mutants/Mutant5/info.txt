@@ -1,0 +1,34 @@
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\PneumoniaDetection\venv\Lib\site-packages\keras\optimizer_v2\optimizer_v2.py
+  
+def _decayed_lr(self, var_dtype):
+    """Get decayed learning rate as a Tensor with dtype=var_dtype."""
+    lr_t = self._get_hyper("learning_rate", var_dtype)
+    if isinstance(lr_t, learning_rate_schedule.LearningRateSchedule):
+      local_step = tf.cast(self.iterations, var_dtype)
+      lr_t = tf.cast(lr_t(local_step), var_dtype)
+    if self._initial_decay > 0.:
+      local_step = tf.cast(self.iterations, var_dtype)
+      decay_t = tf.cast(self._initial_decay, var_dtype)
+      lr_t = lr_t / (1. + decay_t * local_step)
+    return lr_t                                                                #Origional
+
+
+  def _decayed_lr(self, var_dtype):
+    """Get decayed learning rate as a Tensor with dtype=var_dtype."""
+    lr_t = self._get_hyper("learning_rate", var_dtype)
+    if isinstance(lr_t, learning_rate_schedule.LearningRateSchedule):
+      local_step = tf.cast(self.iterations, var_dtype)
+      lr_t = tf.cast(lr_t(local_step), var_dtype)
+    if self._initial_decay > 0.:
+      local_step = tf.cast(self.iterations, var_dtype)
+      decay_t = tf.cast(self._initial_decay, var_dtype)
+      lr_t = lr_t / (1. + decay_t * local_step)
+    
+    return lr_t * 4                                                        #Faqeer: Mutant added
+
+============================================
+Due to high learning rate, the mutated code would not be converging to the same point (like the original one) and may lead to inconsistent outputs.
+============================================
+Note: During analysis, try to focus on second class label instances
+[[174  60]
+ [ 46 344]]

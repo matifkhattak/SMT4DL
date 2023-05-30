@@ -1,0 +1,35 @@
+C:\Users\faqeerrehman\MSU\OneDrive - Montana State University\Research\Clem\ImageClassification\PneumoniaDetection\venv\Lib\site-packages\keras\engine\compile_utils.py
+
+      if loss_weight is not None:
+        loss_value *= loss_weight
+        loss_metric_value *= loss_weight
+
+      if (loss_obj.reduction == losses_utils.ReductionV2.SUM_OVER_BATCH_SIZE or
+          loss_obj.reduction == losses_utils.ReductionV2.AUTO):
+        loss_value = losses_utils.scale_loss_for_distribution(loss_value)
+
+      loss_values.append(loss_value)
+      loss_metric_values.append(loss_metric_value)                                 #Orgional
+
+
+
+
+
+
+
+      if loss_weight is not None:
+        loss_value *= loss_weight
+        loss_metric_value *= loss_weight
+
+      if (loss_obj.reduction == losses_utils.ReductionV2.SUM_OVER_BATCH_SIZE or
+          loss_obj.reduction == losses_utils.ReductionV2.AUTO):
+        loss_value = losses_utils.scale_loss_for_distribution(loss_value)
+
+      loss_values.append(loss_value)
+      loss_metric_values.append(loss_metric_value * 191)                          #Faqeer: mutant added
+
+
+
+
+
+It will cause underfitting
