@@ -1,12 +1,4 @@
-#https://github.com/Karan-Malik/ConvNet
-
-#Fixing issues faced during installation of libraries###
-## cv2: https://stackoverflow.com/questions/63732353/error-could-not-build-wheels-for-opencv-python-which-use-pep-517-and-cannot-be
-   #pip3 install opencv-python==3.4.13.47
-
-#https://stackoverflow.com/questions/62812563/keras-prediction-returns-only-one-class-in-binary-problem
-
-# For tensorflow error: enable LongPathsEnabled in windows registry Editor
+#https://github.com/Yashwanth-23/Pneumonia-detection-using-CNN/blob/main/Pneumonia_detection_using_CNN.ipynb
 
 import os
 import numpy as np
@@ -41,9 +33,9 @@ import random as rn
 path = './chest_xray/'
 
 ###### Hyperparameters####
-img_dims = 128 #150
+img_dims = 150
 epochs = 10
-batch_size = 16
+batch_size = 32
 
 class ImageClassifier:
 
@@ -117,61 +109,24 @@ class ImageClassifier:
         train_gen, test_gen, test_data, test_labels, val_gen = self.loadData(img_dims, batch_size)
 
         ## CNN Architecture
-        model = Sequential()
+        model = tf.keras.models.Sequential([
+            tf.keras.layers.Conv2D(16, (3, 3), activation='relu', input_shape=(img_dims, img_dims, 3)),
+            tf.keras.layers.MaxPool2D(2, 2),
+            tf.keras.layers.Conv2D(32, (3, 3), activation='relu'),
+            tf.keras.layers.MaxPool2D(2, 2),
+            tf.keras.layers.Conv2D(64, (3, 3), activation='relu'),
+            tf.keras.layers.MaxPool2D(2, 2),
+            tf.keras.layers.Conv2D(128, (3, 3), activation='relu'),
+            tf.keras.layers.MaxPool2D(2, 2),
+            tf.keras.layers.Conv2D(128, (3, 3), activation='relu'),
+            tf.keras.layers.MaxPool2D(2, 2),
 
-        # First conv block
-        model.add(Conv2D(32, (3, 3), padding='same', activation='relu', input_shape=(img_dims, img_dims, 3)))
-        model.add(MaxPooling2D(2, 2))
-        model.add(SpatialDropout2D(0.1))
-
-        # Second conv block
-        model.add(Conv2D(32, (3, 3), padding='same', activation='relu'))
-        model.add(MaxPooling2D(2, 2))
-        model.add(BatchNormalization())
-        model.add(SpatialDropout2D(0.2))
-
-        # Third conv block
-        model.add(Conv2D(32, (3, 3), padding='same', activation='relu'))
-        model.add(MaxPooling2D(2, 2))
-        model.add(BatchNormalization())
-        model.add(SpatialDropout2D(0.2))
-
-        # Fourth conv block
-        model.add(Conv2D(32, (3, 3), padding='same', activation='relu'))
-        model.add(MaxPooling2D(2, 2))
-        model.add(BatchNormalization())
-        model.add(SpatialDropout2D(0.3))
-
-        # Fifth conv block
-        model.add(Conv2D(32, (3, 3), padding='same', activation='relu'))
-        model.add(MaxPooling2D(2, 2))
-        model.add(BatchNormalization())
-        model.add(SpatialDropout2D(0.3))
-
-        # Six conv block
-        model.add(Conv2D(32, (3, 3), padding='same', activation='relu'))
-        model.add(MaxPooling2D(2, 2))
-        model.add(BatchNormalization())
-        model.add(SpatialDropout2D(0.3))
-
-        # Seventh conv block
-        model.add(Conv2D(32, (3, 3), padding='same', activation='relu'))
-        model.add(MaxPooling2D(2, 2))
-        model.add(BatchNormalization())
-        model.add(SpatialDropout2D(0.5))
-
-        # FC Layer
-        model.add(Flatten())
-        model.add(Dropout(0.5))
-        model.add(Dense(units=img_dims, activation='relu'))
-        model.add(Dropout(0.5))
-        model.add(Dense(units=img_dims, activation='relu'))
-        model.add(Dropout(0.5))
-
-        #Output Layer
-        model.add(Dense(units=1, activation='sigmoid'))
-
-        #adam = tf.keras.optimizers.Adam(learning_rate=0.001)
+            tf.keras.layers.Flatten(),
+            tf.keras.layers.Dense(256, activation='relu'),
+            tf.keras.layers.Dense(512, activation='relu'),
+            tf.keras.layers.Dense(1, activation='sigmoid')
+        ])
+        #model.summary()
         model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
         # Callbacks
@@ -186,7 +141,7 @@ class ImageClassifier:
             train_gen, steps_per_epoch=train_gen.samples // batch_size,
             epochs=epochs, validation_data=val_gen,
             validation_steps=val_gen.samples // batch_size, callbacks=[checkpoint, lr_reduce])
-
+        #history = model.fit(train_generator, epochs=50, validation_data=validation_generator)
 
         preds = model.predict(test_data)
 
@@ -225,14 +180,15 @@ class ImageClassifier:
         print('\nTEST METRICS ----------------------')
         precision = tp / (tp + fp) * 100
         recall = tp / (tp + fn) * 100
+        F1 = 2 * precision * recall / (precision + recall)
         print('Accuracy: {}%'.format(acc))
         print('Precision: {}%'.format(precision))
         print('Recall: {}%'.format(recall))
-        print('F1-score: {}'.format(2 * precision * recall / (precision + recall)))
+        print('F1-score: {}'.format(F1))
 
         #print('\nTRAIN METRIC ----------------------')
         #print('Train acc: {}'.format(np.round((hist.history['accuracy'][-1]) * 100, 2)))
-
+        return acc,precision,recall,F1
     def setSession(self):
         # Sets session for deterministic results
         # https://keras.io/getting-started/faq/#how-can-i-obtain-reproducible-results-using-keras-during-development
@@ -270,7 +226,7 @@ class ImageClassifier:
         # K.set_session(sess)
         #Faqeer: tf.compat.v1.keras.backend.set_session(sess)
 
-    def saveResults(self,test_data, test_labels,preds,iterationNo,wb):
+    def saveResults(self,test_data, test_labels,preds,iterationNo,wb,acc,precision,recall,F1):
 
         # =====create sheet and add headers====
         sheetToRecordInstanceLevelOutput = wb.add_sheet('IterationNo' + str(iterationNo))
@@ -278,6 +234,10 @@ class ImageClassifier:
         sheetToRecordInstanceLevelOutput.write(0, 1, 'PredictedOutput')
         sheetToRecordInstanceLevelOutput.write(0, 2, 'PredictedProbabilities')
         sheetToRecordInstanceLevelOutput.write(0, 3, 'MaxProbability')
+        sheetToRecordInstanceLevelOutput.write(0, 4, 'Accuracy')
+        sheetToRecordInstanceLevelOutput.write(0, 5, 'Precision')
+        sheetToRecordInstanceLevelOutput.write(0, 6, 'Recall')
+        sheetToRecordInstanceLevelOutput.write(0, 7, 'F1')
 
         startRowToBeInserted = 1 # Add new data starting from row 1
         predictedProbabilitiesArr = [0]*2
@@ -288,7 +248,7 @@ class ImageClassifier:
             predictedClassProbabilities=1
             predictedClass0Probability=0
             predictedClass1Probability=0
-            if preds[x] > 0.5:
+            if preds[x] >= 0.5:
                 predictedClassLabel = 1
             else:
                 predictedClassLabel = 0
@@ -309,6 +269,11 @@ class ImageClassifier:
             sheetToRecordInstanceLevelOutput.write(startRowToBeInserted, 1, str(predictedClassLabel))
             sheetToRecordInstanceLevelOutput.write(startRowToBeInserted, 2, str(predictedClassProbabilities))
             sheetToRecordInstanceLevelOutput.write(startRowToBeInserted, 3, str(np.amax([predictedProbabilitiesArr])))
+            sheetToRecordInstanceLevelOutput.write(startRowToBeInserted, 4, str(acc))
+            sheetToRecordInstanceLevelOutput.write(startRowToBeInserted, 5, str(precision))
+            sheetToRecordInstanceLevelOutput.write(startRowToBeInserted, 6, str(recall))
+            sheetToRecordInstanceLevelOutput.write(startRowToBeInserted, 7, str(F1))
+
             startRowToBeInserted = startRowToBeInserted + 1
 
 
@@ -316,17 +281,17 @@ class ImageClassifier:
 
     def executeCNNModelUnderTest(self,wb,fileNameToSaveTheResults):
 
-        for iterationNo in range(1, 6):  # 31: Number of times we want to build Model and storing the results
+        for iterationNo in range(1,31):  # 31: Number of times we want to build Model and storing the results
             print("Iteration No = ", iterationNo)
             # Build CNN Model
             imageClassifier = ImageClassifier()
             # Important Note: To show that although the software tester tried to fix the random seed but still we don't get deterministic results; thus, traditional MT technique can not be used
             test_data, test_labels, preds = imageClassifier.buildCNNModelAndMakePrediction(fixRandomSeed=True)
             # Make Predictions
-            imageClassifier.checkCNNModelPerformance(test_labels, preds, fileNameToSaveTheResults)
+            acc,precision,recall,F1 = imageClassifier.checkCNNModelPerformance(test_labels, preds, fileNameToSaveTheResults)
 
             # Save the results in Excel
-            imageClassifier.saveResults(test_data, test_labels, preds,iterationNo,wb)
+            imageClassifier.saveResults(test_data, test_labels, preds,iterationNo,wb,acc,precision,recall,F1)
 
         if fileNameToSaveTheResults != None:
             wb.save(fileNameToSaveTheResults)  # .xls
