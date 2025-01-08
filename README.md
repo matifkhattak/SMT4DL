@@ -2,4 +2,4 @@
 Machine learning technology spans many areas and today plays a significant role in addressing a wide range of problems in critical domains, i.e., healthcare, autonomous driving, finance, manufacturing, cybersecurity, etc. Metamorphic Testing (MT) is considered a simple but very powerful approach in testing such computationally complex systems for which either an oracle is not available or is available but difficult to apply. Conventional metamorphic testing techniques have certain limitations in verifying deep learning-based models (i.e., CNNs) that have a stochastic nature (because of randomly initializing the network weights) in their training. In this paper, we attempt to address this problem by using a Statistical Metamorphic Testing (SMT) technique that does not require software testers to worry about fixing the random seeds (to get deterministic results) to verify the Metamorphic Relations (MRs). 
 
 ## Citation
-If you use this repository in your research, please cite it. See [CITATION](CITATION) for details.
+If you use this repository in your research, please cite it. See [CITATION](Citation.md) for details.
